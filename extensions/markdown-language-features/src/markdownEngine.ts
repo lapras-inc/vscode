@@ -38,10 +38,9 @@ const pluginSourceMap: MarkdownIt.PluginSimple = (md): void => {
 			originalHtmlBlockRenderer(tokens, idx, options, env, self)
 		);
 	}
-	const originalCodeBlockRenderer = md.renderer.rules['code_block'];
-	const originalFenceRenderer = md.renderer.rules['fence'];
-	if (originalCodeBlockRenderer && originalFenceRenderer) {
-		md.renderer.rules['code_block'] = originalFenceRenderer;
+
+	if (md.renderer.rules['code_block'] && md.renderer.rules['fence']) {
+		md.renderer.rules['code_block'] = md.renderer.rules['fence'];
 	}
 };
 
