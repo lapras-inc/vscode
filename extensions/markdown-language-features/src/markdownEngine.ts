@@ -38,6 +38,15 @@ const pluginSourceMap: MarkdownIt.PluginSimple = (md): void => {
 			originalHtmlBlockRenderer(tokens, idx, options, env, self)
 		);
 	}
+	const originalCodeBlockRenderer = md.renderer.rules['code_block'];
+	console.log("--------------------------遠たよ----------------------");
+	if (originalCodeBlockRenderer) {
+		console.log("--------------------------遠たよ2----------------------");
+		md.renderer.rules['code_block'] = (tokens, idx, options, env, self) => (
+			'あああ<pre' + self.renderAttrs(tokens[idx]) + '><code>' +
+          tokens[idx].content + '</code></pre>\n'
+		);
+	}
 };
 
 /**
