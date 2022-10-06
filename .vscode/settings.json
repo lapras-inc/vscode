@@ -104,5 +104,7 @@
 		"strings": "inline"
 	},
 	"githubPullRequests.assignCreated": "${user}",
-	"githubPullRequests.defaultMergeMethod": "squash"
+	"githubPullRequests.defaultMergeMethod": "squash",
+	"terminal.integrated.fontSize": 24,
+	"editor.fontSize": 24
 }
